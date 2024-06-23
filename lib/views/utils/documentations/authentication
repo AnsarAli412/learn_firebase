@@ -1,0 +1,21 @@
+
+1. add firebase_core and firebase_auth package in pubspec.yaml file
+2. Initialize firebase app
+3. Go to the firebase console/authentication/sign-in-methods/add provider/enable phone auth
+4. Generate SHA1 and SHA256 key form android studio
+    i. go to the android folder/open it in terminal/run command: './gradlew signingReport'
+    ii. copy the SHA1 and SHA256 key from release variant
+    iii. Go to firebase console/project settings/select android app/add certification of SHA1 and SHA 256
+5. Create instance of firebaseAuth
+6. call the verifyPhoneNumber method
+    pass the number
+    handle the response
+7. call verify otp method
+    pass the verification id and otp
+8. create a credential with verification id and otp
+9. signing with credential
+10.  check is credential has any user
+    if user = true
+    false
+
+
