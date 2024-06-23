@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "528913397244",
+    "project_id": "learn-firebase-girls",
+    "storage_bucket": "learn-firebase-girls.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:528913397244:android:60d496b18f79f1e0efae79",
+        "android_client_info": {
+          "package_name": "com.edugaon.learn_firebase"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAzfjj4cqoY-jEB76caZ79s6ww7K8BFNe0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
