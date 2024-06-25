@@ -15,7 +15,14 @@
 8. create a credential with verification id and otp
 9. signing with credential
 10.  check is credential has any user
-    if user = true
-    false
+
+if your number/account got blocked by firebase
+solution => Go to firebase console/authentication/sign-in-method/select phone/ add dummy number and otp
+
+    if credential has user, it means user logged in
+
+    check, is your login or not
+    if yes => go to the home screen
+    if no => go for login again
 
 

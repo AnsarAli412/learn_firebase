@@ -5,7 +5,7 @@ if system is new for this
 1. Download node js form internet with latest version
 2. install the node js
 3. install firebase {command: npm install -g firebase-tools}
-4. login firebase with firebase account credentail {command: firebase login}
+4. login firebase with firebase account credential {command: firebase login}
 5. install flutter_cli  {command: dart pub global activate flutterfire_cli}
 6. connect firebase project id with {flutterfire configure --project=projectId}
 7. select your platform for project with arrow and space buttons

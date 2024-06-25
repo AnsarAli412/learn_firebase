@@ -11,21 +11,23 @@ class PhoneAuthScreen extends StatefulWidget {
 class _PhoneAuthScreenState extends State<PhoneAuthScreen> {
   var phoneAuth = PhoneAuthController();
   TextEditingController otpController = TextEditingController();
+  TextEditingController numberController = TextEditingController();
   String verificationId = "";
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        appBar: AppBar(title: Text("Phone Verification"),),
         body: Column(
           children: [
             TextFormField(
-              controller: otpController,
+              controller: numberController,
             ),
             ElevatedButton(
                 onPressed: () async {
                   await phoneAuth
-                      .verifyPhoneNumber("1234567890")
+                      .verifyPhoneNumber(numberController.text)
                       .then((id) {
                  setState(() {
                    verificationId = id;
@@ -34,9 +36,12 @@ class _PhoneAuthScreenState extends State<PhoneAuthScreen> {
                 },
                 child: const Text("Phone Verify")),
 
+            TextFormField(
+              controller: otpController,
+            ),
             ElevatedButton(onPressed: (){
               phoneAuth.verifyOTP(verificationId, otpController.text);
-            }, child: const Text("Phone OTP")),
+            }, child: const Text("Verify OTP")),
           ],
         ),
       ),
