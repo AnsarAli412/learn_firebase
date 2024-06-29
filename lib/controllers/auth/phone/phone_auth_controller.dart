@@ -6,19 +6,25 @@ class PhoneAuthController {
 
   Future<String> verifyPhoneNumber(String number) async {
     String verificationId = "";
-    await firebaseAuth.verifyPhoneNumber(
-        phoneNumber: "+91 $number",
-        verificationCompleted: (phoneCredential) {},
-        verificationFailed: (error) {
-          Fluttertoast.showToast(msg: "${error.message}");
-          throw Exception(error.message);
-        },
-        codeSent: (verifyId, resendCode) {
-          verificationId = verifyId;
-          Fluttertoast.showToast(msg: "Otp Sent success");
+    try{
+      await firebaseAuth.verifyPhoneNumber(
+          phoneNumber: "+91 $number",
+          verificationCompleted: (phoneCredential) {},
+          verificationFailed: (error) {
+            Fluttertoast.showToast(msg: "${error.message}");
+            throw Exception(error.message);
+          },
+          codeSent: (verifyId, resendCode) {
+            verificationId = verifyId;
+            Fluttertoast.showToast(msg: "Otp Sent success");
 
-        },
-        codeAutoRetrievalTimeout: (timeOut) {});
+          },
+          codeAutoRetrievalTimeout: (timeOut) {}).catchError((error){
+        Fluttertoast.showToast(msg: "Error ${error}");
+      });
+    } on FirebaseAuthException catch(error){
+      Fluttertoast.showToast(msg: "Error ${error.message}",toastLength: Toast.LENGTH_LONG);
+    }
 
     return verificationId;
   }
@@ -29,7 +35,9 @@ class PhoneAuthController {
 
     try {
       UserCredential userCredential = await firebaseAuth.signInWithCredential(
-          credential);
+          credential).catchError((error){
+        Fluttertoast.showToast(msg: "Error ${error}");
+      });
       if (userCredential.user != null) {
         Fluttertoast.showToast(msg: "Login Successful");
       } else {
