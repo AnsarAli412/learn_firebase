@@ -1,0 +1,29 @@
+# Firebase Firestore
+Q. How to enable firebase firestore in console.
+
+steps
+open firebase console/
+go to firebase firestore/
+click on create database button/
+select database location/ = nearest ==> asia (mumbai)
+select database type/ => production
+change the database access rules
+	go to rules section(right side of data section on top)
+	insted of
+	==> allow read,write : if false
+	replace of
+	==> allow read, write : if true
+
+Q. how to set data in firestore by console
+
+1. create a collection => give name (students)
+2. give document name  => give name (student id) == auto generate
+3. key = select data type = value ==> name = String = "Ali"
+
+Q. how to use firebase firestore in flutter
+1. check, is your project connected with firebase
+2. add package of 'cloud_firestore' in .yaml file
+3.  create a instance of firebase firestore
+4. create a collection based on instance
+5. call add method to add data with map
+6.
