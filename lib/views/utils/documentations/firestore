@@ -9,7 +9,7 @@ select database location/ = nearest ==> asia (mumbai)
 select database type/ => production
 change the database access rules
 	go to rules section(right side of data section on top)
-	insted of
+	instead of
 	==> allow read,write : if false
 	replace of
 	==> allow read, write : if true
@@ -26,4 +26,4 @@ Q. how to use firebase firestore in flutter
 3.  create a instance of firebase firestore
 4. create a collection based on instance
 5. call add method to add data with map
-6.
+
