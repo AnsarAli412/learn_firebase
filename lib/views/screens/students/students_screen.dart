@@ -11,6 +11,7 @@ class StudentsScreen extends StatefulWidget {
 
 class _StudentsScreenState extends State<StudentsScreen> {
   TextEditingController nameController = TextEditingController();
+  TextEditingController ageController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -23,6 +24,8 @@ class _StudentsScreenState extends State<StudentsScreen> {
             ),
             TextField(
               controller: nameController,
+            ),TextField(
+              controller: ageController,
             ),
             ElevatedButton(
                 onPressed: () {
@@ -30,11 +33,12 @@ class _StudentsScreenState extends State<StudentsScreen> {
                 },
                 child: Text("Add Students")),
             Expanded(
-                child: FutureBuilder(
-                    future: getStudentsData(),
+                child: StreamBuilder(
+                    stream: getStudentsData(),
                     builder: (c, snap) {
                       var data = snap.data?.docs.toList();
                       if(snap.hasData){
+                        // var address = data![0]['kuch_v'].last;
                         return ListView.builder(
                             itemCount: data!.length,
                             itemBuilder: (_,index){
@@ -64,9 +68,6 @@ class _StudentsScreenState extends State<StudentsScreen> {
           ElevatedButton(onPressed: ()async{
             await updateStudentData(docId);
             Navigator.pop(context);
-            setState(() {
-              getStudentsData();
-            });
           }, child:Text("Update"))
         ],
       );
@@ -85,12 +86,12 @@ class _StudentsScreenState extends State<StudentsScreen> {
     });
   }
 
-  Future<QuerySnapshot<Map<String, dynamic>>> getStudentsData()async{
+  Stream<QuerySnapshot<Map<String, dynamic>>> getStudentsData(){
     // create instance of firestore
     var firestore = FirebaseFirestore.instance;
     // create a collection
     var students = firestore.collection("students");
-    var data = await students.get();
+    var data = students.where('gender',isEqualTo: 'Female').snapshots();
     return data;
   }
 
@@ -105,7 +106,7 @@ class _StudentsScreenState extends State<StudentsScreen> {
       "email": "jyoti@gmail.com",
       "phone": 54133453654326,
       "gender": "Female",
-      "age": 34.6
+      "age": double.parse(ageController.text)
     }).then((ref) {
       Fluttertoast.showToast(msg: ref.id);
       print("DocId; ${ref.id}");
