@@ -4,6 +4,7 @@ import 'package:learn_firebase/firebase_options.dart';
 import 'package:learn_firebase/views/screens/auth/email/login_screen.dart';
 import 'package:learn_firebase/views/screens/auth/email/registration_screen.dart';
 import 'package:learn_firebase/views/screens/auth/phone/phone_auth_screen.dart';
+import 'package:learn_firebase/views/screens/email_password/register_screen.dart';
 import 'package:learn_firebase/views/screens/splash/splash_screen.dart';
 import 'package:learn_firebase/views/screens/students/students_screen.dart';
 
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: false,
       ),
-      home: StudentsScreen(),
+      home: RegisterScreen(),
     );
   }
 }
