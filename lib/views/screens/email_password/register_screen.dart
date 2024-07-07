@@ -40,6 +40,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
     }
   }
 
+
   loginUser()async{
     var fireStore = FirebaseFirestore.instance;
     var existUser = await fireStore.collection("users").where('email',isEqualTo: 'a@gmail.com').get();
