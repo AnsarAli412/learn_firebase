@@ -38,12 +38,15 @@ dependencies:
   firebase_core: any
   firebase_auth: any
   cloud_firestore: any
+  firebase_database: any
   fluttertoast: any
   image_picker: any
   firebase_storage: any
   file_picker: any
   syncfusion_flutter_pdfviewer: ^26.1.40
   video_player: ^2.9.1
+  shared_preferences: any
+  device_info_plus: any
 
 dev_dependencies:
   flutter_test:

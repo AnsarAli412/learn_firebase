@@ -1,15 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:learn_firebase/firebase_options.dart';
-import 'package:learn_firebase/views/screens/auth/email/login_screen.dart';
-import 'package:learn_firebase/views/screens/auth/email/registration_screen.dart';
-import 'package:learn_firebase/views/screens/auth/phone/phone_auth_screen.dart';
-import 'package:learn_firebase/views/screens/documents/folders/folder_screen.dart';
-import 'package:learn_firebase/views/screens/email_password/register_screen.dart';
-import 'package:learn_firebase/views/screens/splash/splash_screen.dart';
-import 'package:learn_firebase/views/screens/storage/profile_screen.dart';
-import 'package:learn_firebase/views/screens/storage/upload_file_screen.dart';
-import 'package:learn_firebase/views/screens/students/students_screen.dart';
+import 'package:learn_firebase/views/screens/chats/chat_screen.dart';
+import 'package:learn_firebase/views/screens/chats/user_details_screen.dart';
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
@@ -28,7 +21,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: false,
       ),
-      home: FolderScreen(),
+      home: UserDetailsScreen(),
     );
   }
 }

@@ -52,9 +52,9 @@ class DefaultFirebaseOptions {
     messagingSenderId: '528913397244',
     projectId: 'learn-firebase-girls',
     authDomain: 'learn-firebase-girls.firebaseapp.com',
+    databaseURL: 'https://learn-firebase-girls-default-rtdb.asia-southeast1.firebasedatabase.app',
     storageBucket: 'learn-firebase-girls.appspot.com',
     measurementId: 'G-R3JH0CQ03W',
-    
   );
 
   static const FirebaseOptions android = FirebaseOptions(
@@ -62,6 +62,7 @@ class DefaultFirebaseOptions {
     appId: '1:528913397244:android:60d496b18f79f1e0efae79',
     messagingSenderId: '528913397244',
     projectId: 'learn-firebase-girls',
+    databaseURL: 'https://learn-firebase-girls-default-rtdb.asia-southeast1.firebasedatabase.app',
     storageBucket: 'learn-firebase-girls.appspot.com',
   );
 
@@ -70,6 +71,7 @@ class DefaultFirebaseOptions {
     appId: '1:528913397244:ios:b84f90511530b15befae79',
     messagingSenderId: '528913397244',
     projectId: 'learn-firebase-girls',
+    databaseURL: 'https://learn-firebase-girls-default-rtdb.asia-southeast1.firebasedatabase.app',
     storageBucket: 'learn-firebase-girls.appspot.com',
     iosBundleId: 'com.edugaon.learnFirebase',
   );
