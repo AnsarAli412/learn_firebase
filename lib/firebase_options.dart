@@ -54,6 +54,7 @@ class DefaultFirebaseOptions {
     authDomain: 'learn-firebase-girls.firebaseapp.com',
     storageBucket: 'learn-firebase-girls.appspot.com',
     measurementId: 'G-R3JH0CQ03W',
+    
   );
 
   static const FirebaseOptions android = FirebaseOptions(

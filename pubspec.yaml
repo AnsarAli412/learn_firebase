@@ -39,6 +39,11 @@ dependencies:
   firebase_auth: any
   cloud_firestore: any
   fluttertoast: any
+  image_picker: any
+  firebase_storage: any
+  file_picker: any
+  syncfusion_flutter_pdfviewer: ^26.1.40
+  video_player: ^2.9.1
 
 dev_dependencies:
   flutter_test:
