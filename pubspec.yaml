@@ -47,6 +47,8 @@ dependencies:
   video_player: ^2.9.1
   shared_preferences: any
   device_info_plus: any
+  flutter_local_notifications: any
+  permission_handler: any
 
 dev_dependencies:
   flutter_test:

@@ -1,5 +1,6 @@
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class ChatScreen extends StatefulWidget {
   final String userName;
@@ -109,7 +110,17 @@ class _ChatScreenState extends State<ChatScreen> {
   }
 
   Widget messageView(Map<dynamic, dynamic> message) {
-    return Card(
+    return Dismissible(
+      behavior: HitTestBehavior.deferToChild,
+      onDismissed: (direction){
+        if(direction == DismissDirection.endToStart){
+          // deleteMessage(message['id']);
+          Fluttertoast.showToast(msg: "Start to end");
+        }else{
+          Fluttertoast.showToast(msg: "End to start");
+        }
+      },
+        key: Key(""), child: Card(
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(
@@ -127,7 +138,11 @@ class _ChatScreenState extends State<ChatScreen> {
           ],
         ),
       ),
-    );
+    ));
+  }
+
+  deleteMessage(String id)async{
+   await chatRef.child(id).remove();
   }
 
   addMessage(String message) async {

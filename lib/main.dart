@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:learn_firebase/firebase_options.dart';
-import 'package:learn_firebase/views/screens/chats/chat_screen.dart';
-import 'package:learn_firebase/views/screens/chats/user_details_screen.dart';
+import 'package:learn_firebase/views/screens/notification/notification_screen.dart';
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
@@ -21,7 +20,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: false,
       ),
-      home: UserDetailsScreen(),
+      home: const NotificationScreen(),
     );
   }
 }
