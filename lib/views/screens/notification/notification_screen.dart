@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_local_notifications/flutter_local_notifications.dart';
-import 'package:permission_handler/permission_handler.dart';
 
 class NotificationScreen extends StatefulWidget {
   const NotificationScreen({super.key});
@@ -18,9 +16,10 @@ class _NotificationScreenState extends State<NotificationScreen> {
           child: Column(
             children: [
               ElevatedButton(onPressed: ()async{
-                if(await checkNotificationPermission() == true){
-                  showNotification();
-                }
+                // NotificationService().getFCMToken();
+                // if(await checkNotificationPermission() == true){
+                //   showNotification();
+                // }
               }, child: const Text("Show notification"))
             ],
           ),
@@ -29,24 +28,6 @@ class _NotificationScreenState extends State<NotificationScreen> {
     );
   }
 
-  showNotification(){
-    var notificationPlugin = FlutterLocalNotificationsPlugin();
-    notificationPlugin.initialize(const InitializationSettings(android:AndroidInitializationSettings("@mipmap/ic_launcher") ));
-    notificationPlugin.show(0, "Rani", "Hi, kalua", const NotificationDetails(
-      android: AndroidNotificationDetails("channelId","channelName")
-    ));
-  }
 
-  Future<bool> checkNotificationPermission()async{
-    var isGranted = false;
-    var permission = await Permission.notification.isGranted;
-    if(!permission){
-      await Permission.notification.request();
-      isGranted = false;
-    }else{
-      isGranted = true;
-    }
-    return isGranted;
-  }
 
 }

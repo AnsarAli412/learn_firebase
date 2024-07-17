@@ -39,6 +39,7 @@ dependencies:
   firebase_auth: any
   cloud_firestore: any
   firebase_database: any
+  firebase_messaging: any
   fluttertoast: any
   image_picker: any
   firebase_storage: any
@@ -49,6 +50,7 @@ dependencies:
   device_info_plus: any
   flutter_local_notifications: any
   permission_handler: any
+
 
 dev_dependencies:
   flutter_test:
