@@ -4,6 +4,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:learn_firebase/controllers/notification/notification_service.dart';
 import 'package:learn_firebase/firebase_options.dart';
 import 'package:learn_firebase/views/screens/notification/notification_screen.dart';
+import 'package:learn_firebase/views/screens/realtime_db/basics_screen.dart';
 
 @pragma('vm:entry-point')
 Future<void> backgroundMessageHandler(RemoteMessage message)async{
@@ -41,7 +42,7 @@ class _MyAppState extends State<MyApp> {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: false,
       ),
-      home: const NotificationScreen(),
+      home: const BasicsScreen(),
     );
   }
 }
